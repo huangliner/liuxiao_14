@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/* //冒泡排序:把所有的数据按照一定的顺序进行排列(从小到大，从大到小)
+			var arr =[100,200,0,30,110];
+			//循环控制比较的轮数
+			for(var i=0;i<arr.length;i++){
+				//控制比较的次数
+				for(var j = 0 ; j<arr.length-1-i;j++){
+					//判断大小的比较
+					if(arr[j]<arr[j+1]){
+						var temp = arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=temp;
+					}
+				}
+			}
+			console.log(arr); */
+
+
+			var arr = [100, 20, 4, 44, 5];
+			//判断比较的轮数
+			for (var i = 0; i < arr.length; i++) {
+				//循环对于一个值与剩余值的比较大小
+				for (var f = 0; f < arr.length - i; f++) {
+					//判断数值的大小;
+					if (arr[f] > arr[f + 1]) {
+						var tep = arr[f];
+						arr[f] = arr[f + 1];
+						arr[f + 1] = tep;
+					}
+				}
+			}
+			console.log(arr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
