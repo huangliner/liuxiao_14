@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//1、var a=[2,4,{x:2,y:3},true,[5,6]];     ---用every()方法实现判断a中的元素是否全为数字类型
+			function num(value, index, arr) {
+				var result = value.constructor == Number? true : false;
+
+			}
+			var a =[2,4,{x:2,y:3},true,[5,6]];
+			document.write(a.every(num)+"<br/>"); 
+
+
+
+			//2、检测数组var num=[1,6,3,9]中元素的值是否在2-10之间（若num中有非数字返回false）
+			function numRange(value, index, arr) {
+				if (value>=2&&value<=10)
+					return true;
+				else
+					return false;
+			}
+			var a1 =[1,6,3,9];
+			document.write(a1.every(numRange)+"<br/>");
+
+
+
+			//3、var a=[2,4,{x:2,y:3},true,[5,6]];      ---用some()方法实现判断a中的元素是否全为数字类型
+			function num2(value,index,arr){
+				if (value.constructor == Number)
+					return false;
+				else
+					return true;
+				
+			}
+			var a2=[2,4,{x:2,y:3},true,[5,6]];
+			document.write(a2.some(num2)+"<br/>");     //输出2 4 5 false
+		</script>
+	</body>
+</html>
