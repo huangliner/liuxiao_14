@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//1)、编写一个函数，有两个参数，实现将参数的值转换为对象属性的值例：f(1,2)===>返回{x:1,y:2}
+			//ES6
+			function obj(x = 1, y = 2) {
+				this.x = x;
+				this.y = y;
+			}
+
+			var p = new obj();
+			console.log(p);
+
+
+			//2)、编写函数实现两个数的四则运算
+			var sz = function(a, b, c) {
+				return d = eval(a + c + b);
+			}
+			console.log(sz(parseInt(prompt("请输入第一个")),parseInt(prompt("请输入第二个")),prompt("请输入")));
+
+
+		</script>
+
+
+	</body>
+</html>
