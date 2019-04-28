@@ -7,12 +7,16 @@
 	<body>
 		<script>
 			//1、分别使用call和apply求任意一组数的和
-			function add(c, d) {
-				return c + d;
+			function add() {
+				var sum = 0;
+				for (var i = 0; i < arguments.length; i++) {
+					sum += arguments[i];
+				}
+				return sum
 			}
 
-			console.log(add.call(null, 3, 4)); 
-			console.log(add.apply(null, [5, 6])); 
+			console.log(add.call(null, 3, 4));
+			console.log(add.apply(null, [5, 6]));
 
 
 
@@ -20,8 +24,7 @@
 
 			//2、Math.max()是系统自带的求一组数的最大值的方法，如Math.max(1,2,4,0,8)返回8,请利用Math.max()求var a=[1,4,2,6,8,0]这个数组的最大值。
 
-			var a2 = [1, 4, 2, 6, 8, 0],
-				max = Math.max.apply(null, a2)
+			var a2 = [1, 4, 2, 6, 8, 0],max = Math.max.apply(null, a2)
 			console.log(max)
 		</script>
 	</body>
