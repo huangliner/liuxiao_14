@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滚动图片</title>
+		<link rel="stylesheet" href="jingdongshouye.css" />
+		<style>
+			#wrap {
+				width: 1280px;
+				height: 800px;
+				background: #c8dac9;
+				margin: 80px 0 0 100px;
+				position: relative;
+				border: 2px solid gray;
+				overflow: hidden;
+			}
+
+			#picture {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				transition: all 0.5s
+			}
+
+			#picture img {
+				float: left;
+			}
+		</style>
+
+
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="picture">
+				<img src="img/1.jpg" />
+				<img src="img/2.jpg" />
+				<img src="img/3.jpg" />
+				<img src="img/4.jpg" />
+			</div>
+		</div>
+		<script>
+			var obj = document.getElementById('picture');
+			var obj1 = obj.getElementsByTagName('img');
+			var flag = 0;
+
+
+			function show() {
+				if (flag == obj1.length - 1) {
+					flag = 0;
+				} else {
+					flag++;
+				}
+				obj.style.top = flag * (-800) + 'px';
+			}
+			var otime = setInterval(show, 1000);
+		</script>
+	</body>
+</html>
