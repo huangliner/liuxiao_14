@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+
+	</head>
+
+	<body >
+
+		<h2>剩余时间:</h2>
+		<div id="timer"></div>
+
+		<script language="javascript" type="text/javascript">
+			function setTimes(year, month, day, hour, minute, second) {
+				
+				//计算剩余多少天数
+				var remTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
+				var days = parseInt(remTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+				var hours = parseInt(remTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
+				var minutes = parseInt(remTime / 1000 / 60 % 60, 10); //计算剩余的分钟
+				var seconds = parseInt(remTime / 1000 % 60, 10); //计算剩余的秒数
+				
+				
+				days = currTime(days);
+				hours = currTime(hours);
+				minutes = currTime(minutes);
+				seconds = currTime(seconds);
+				setInterval("setTimes(2019,05,15,08,30,00)", 1000);  //传送目标时间
+				
+				//使用字符串的方式将剩余天数连接
+				document.getElementById("timer").innerHTML = days + "天" + hours + "小时" + minutes + "分" + seconds + "秒";
+			}
+
+			function currTime(i) { //将0-9的数字前面加上0，例1变为01
+				if (i < 10) {
+					i = "0" + i;
+				}
+				return i;
+			}
+			setTimes();
+		</script>
+
+
+
+	</body>
+</html>
