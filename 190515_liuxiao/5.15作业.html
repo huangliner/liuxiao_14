@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font: normal 14px "微软雅黑";
+				color: #eeeeee;
+			}
+
+			ul {
+				list-style-type: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			#tab-list {
+				width: 400px;
+				height: 190px;
+				margin: 300px auto;
+				background: #808080;
+
+			}
+
+			#ul1 {
+
+				height: 40px;
+			}
+
+			#ul1 li {
+				display: block;
+				float: left;
+				width: 100px;
+				line-height: 30px;
+				text-align: center;
+				background-color: #666666;
+			}
+
+			#ul1 li:hover {
+				cursor: pointer;
+				color: white;
+			}
+
+			#ul1 li.active {
+				background-color: #808080;
+			}
+
+			#tab-list div {}
+
+			#tab-list div li {
+				height: 30px;
+				line-height: 30px;
+				text-indent: 8px;
+			}
+
+			.show {
+				display: block;
+			}
+
+			.hide {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="tab-list">
+			<ul id="ul1">
+				<li class="active">今日笔记</li>
+				<li>合作播报</li>
+				<li>国家新闻</li>
+				<li>节日笔记</li>
+			</ul>
+			<div>
+				<ul>
+					<li><a href="javascript:;">实例成员：在构造函数中通过this添加或原型添加的属性和方法</a></li>
+					<li><a href="javascript:;">静态成员：给函数对象添加的属性和方法</a></li>
+					<li><a href="javascript:;">实例成员，只能由实例化的对象来访问 </a></li>
+					<li><a href="javascript:;">静态成员，只能由构造函数本身来访问 </a></li>
+				</ul>
+			</div>
+			<div class="hide">
+				<ul>
+					<li><a href="javascript:;">啊手动阀的啊手动阀的撒士大夫</a></li>
+					<li><a href="javascript:;">啊手动阀手动阀手动阀手动阀1</a></li>
+					<li><a href="javascript:;">啊手动阀手动阀手动阀</a></li>
+					<li><a href="javascript:;">阿法撒旦发射点发计</a></li>
+				</ul>
+			</div>
+			<div class="hide">
+				<ul>
+					<li><a href="javascript:;">肯尼亚总统访华后消失？真相原来是这样</a></li>
+					<li><a href="javascript:;">美方一意孤行搞“极限施压” 中方对贸易战会“奉陪到底”</a></li>
+					<li><a href="javascript:;">首桩！美国普通公民状告特朗普和国会让政府关门违宪/a></li>
+					<li><a href="javascript:;">空中肉搏！俄罗斯战机近距离拦截美国无人机</a></li>
+				</ul>
+			</div>
+			<div class="hide">
+				<ul>
+					<li><a href="javascript:;">实例成员：在构造函数中通过this添加或原型添加的属性和方法</a></li>
+					<li><a href="javascript:;">静态成员：给函数对象添加的属性和方法</a></li>
+					<li><a href="javascript:;">实例成员，只能由实例化的对象来访问 </a></li>
+					<li><a href="javascript:;">静态成员，只能由构造函数本身来访问 </a></li>
+				</ul>
+			</div>
+
+			<script>
+				// JS实现选项卡切换
+				function getTad() {
+					var oUl1 = document.getElementById("ul1");
+					var aLi = oUl1.getElementsByTagName("li");
+					var oDiv = document.getElementById("tab-list");
+					var aDiv = oDiv.getElementsByTagName("div");
+					for (var i = 0; i < aLi.length; i++) {
+						aLi[i].index = i;
+						aLi[i].onmouseover = function() {
+							for (var i = 0; i < aLi.length; i++) {
+								aLi[i].className = "";
+							}
+							this.className = "active";
+							for (var j = 0; j < aDiv.length; j++) {
+								aDiv[j].className = "hide";
+							}
+							aDiv[this.index].className = "show";
+						}
+					}
+				}
+				getTad();
+			</script>
+	</body>
+</html>
