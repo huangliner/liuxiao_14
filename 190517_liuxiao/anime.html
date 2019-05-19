@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<style type="text/css">
+			body{
+				position: relative;
+			}
+			.box1 {
+				overflow: hidden;
+				width: 79px;
+				height: 100px;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+
+			.box1 img {
+				position: absolute;
+				left: 0;
+				top: -220px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="box1" id="box">
+			<img src="img/TIM图片20190517154021.png" alt="人物走路" id="img01">
+		</div>
+
+		<script type="text/javascript">
+			var iLeft = 0; //设置图片的初始位置
+			var boxLeft = 0; //设置盒子的初始位置
+			var oImg = document.getElementById("img01");
+			var oBox = document.getElementById('box');
+			function mobile() {
+				iLeft -= 79; //设置下一次图片的移动位置
+				boxLeft += 5;//设置下一次盒子的移动位置
+				//小红每次移动632/8=79px
+				oImg.style.left = iLeft+"px";
+				//盒子每次移动5px
+				oBox.style.left = boxLeft+"px";
+				//判断图片的left位置
+				if(iLeft<-474){
+					iLeft=79;
+				}
+				//判断外层的盒子的移动距离
+				if(boxLeft>400){
+					boxLeft=0;
+				}
+				console.log(iLeft);
+				console.log(boxLeft);
+			}
+			setInterval(mobile, 200);
+		</script>
+	</body>
+</html>
